@@ -19,12 +19,12 @@ int main()
                                {BLANK, BLANK, BLANK}};
 
   char turn = X; //Player X always goes first
-  int row;
-  int column;
   bool playing = true; //Continue playing by default
 
   do
   {
+    int row;
+    int column;
     cout<<turn<<"'s turn.\n";
     cout<<"Which column and row (0-2, or -1 for both to quit)?\n";
     cin>>column;
@@ -46,13 +46,13 @@ int main()
     else
     {
       board[row][column] = turn;
-      if ( turn == 'X' )
+      if ( turn == X )
       {
-        turn = 'O';
+        turn = O;
       }
       else
       {
-        turn = 'X';
+        turn = X;
       }        
     }        //1. When neither of the (above) if nor else if statements are true, then...
     //1-A.  Assign the board location of row and column to the value of turn
@@ -70,11 +70,11 @@ int main()
     //1-A-2. Display a space
     //1-B. Display an newline to move to the next row of the board
    
-    for ( int i = 0; i < ROWS; i++ )
+    for ( int r = 0; r < ROWS; r++ )
     {
-      for ( int j = 0; j < COLUMNS; j++ )
+      for ( int c = 0; c < COLUMNS; c++ )
       {
-        cout<<board[i][j]<<" "<<endl;  
+        cout<<board[r][c]<<BLANK<<endl;  
       }        
     }      
 
