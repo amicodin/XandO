@@ -1,4 +1,4 @@
-//Author:
+//Author:Anthony Micodin
 #include <iostream>
 
 using namespace std;
@@ -40,9 +40,21 @@ int main()
     {
       cout<<"Values must be between 0 and 2.\n";
     }
+
     //TODO: Place the piece and swap turns
     //Outline
-    //1. When neither of the (above) if nor else if statements are true, then...
+    else
+    {
+      board[row][column] = turn;
+      if ( turn == 'X' )
+      {
+        turn = 'O';
+      }
+      else
+      {
+        turn = 'X';
+      }        
+    }        //1. When neither of the (above) if nor else if statements are true, then...
     //1-A.  Assign the board location of row and column to the value of turn
     //1-B.  When turn has the value 'X', then...
     //1-B-1.  turn should be assigned the value 'O'
@@ -57,7 +69,15 @@ int main()
     //1-A-1.  Display the value of the board at location of r and c
     //1-A-2. Display a space
     //1-B. Display an newline to move to the next row of the board
-    
+   
+    for ( int i = 0; i < ROWS; i++ )
+    {
+      for ( int j = 0; j < COLUMNS; j++ )
+      {
+        cout<<board[i][j]<<" "<<endl;  
+      }        
+    }      
+
   }while( playing );
 
   cout<<"Goodbye!\n";
